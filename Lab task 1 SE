@@ -1,0 +1,71 @@
+program-1 - Give input values of a,b,c within the program. 
+print("Weather forecast for today")
+
+a = 5
+b = 6
+c = 7
+
+time = 4
+
+temperature = a*(time)*(time) + b*(time) + c
+
+print("The temperature is", temperature, "C")
+
+Program - 2 - Give input values through keyboard (user choice)
+print("If Temperature is an quadractic equation, then provide values for")
+
+print(" ax^2+bx+c")
+
+print(" x = time")
+
+a = float(input("Enter value for a: "))
+b = float(input("Enter value for b: "))
+c = float(input("Enter value for c: "))
+
+time = int(input("Enter value for time: "))
+
+temperature = a*(time)*(time) + b*(time) + c
+
+print("The temperature is", temperature,"C")
+
+Program-3 - Store a,b,c values in any file, read data from file and then execute,
+
+def temp(a,b,c, t):
+  return a * t**2 + b * t + c
+with open('3.txt', 'r') as f:
+  l = f.readlines()
+  a = float(l[0].strip())
+  b = float(l[1].strip())
+  c = float(l[2].strip())
+  t = float(l[3].strip())
+
+print("at time",t," the temperature is:", temp(a,b,c,t))
+
+values :
+4
+5
+6
+7
+
+
+
+ Program - 4 - Multiple sets of values will give within program as file and read multiple sets of values read from file and then execute.
+def calculate_temperature(a, b, c, time):
+  return a * time**2 + b * time + c
+
+with open('4.txt', 'r') as file:
+  lines = file.readlines()
+
+for line in lines:
+  parts = line.strip().split()
+  a = float(parts[0])
+  b = float(parts[1])
+  c = float(parts[2])
+  time = float(parts[3])
+  temp = calculate_temperature(a, b, c, time)
+  print(f"At time {time}, the temperature is {temp}")
+
+values :
+5 -3 4 5
+2 4 6 2
+
